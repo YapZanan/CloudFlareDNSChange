@@ -1,0 +1,16 @@
+version: '3'
+services:
+  cloudflarednschange:
+    image: yapzanan/cloudflarednschange:first
+    restart: unless-stopped
+    environment:
+      - TOKEN=your_api_token
+      - DOMAIN=your_domain.com
+      - RECORD_NAME=your_dns_record_name
+      - RECORD_TYPE=A
+      - INTERVAL=1
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: '5'
