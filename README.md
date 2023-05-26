@@ -5,14 +5,14 @@ This script is a Python-based dynamic DNS updater for Cloudflare. It automatical
 ## Prerequisites
 
 - Python 3.x
-- `requests` library: You can install it using `pip install requests`.
-- `cloudflare` library: You can install it using `pip install cloudflare`.
+- `requests` library.
+- `cloudflare` library.
 
 ## Installation
 
 ### Manual Installation:
 1. Clone the repository or download the script to your local machine.
-2. Install the required dependencies (`requests` and `cloudflare` libraries) using the provided installation commands.
+2. Install the required dependencies (`requests` and `cloudflare` libraries) using the provided installation commands `pip install -r requirements.txt`.
 3. Set up the required environment variables as mentioned in the previous instructions.
 4. Run the script using `python main.py`.
 
@@ -22,6 +22,18 @@ This script is a Python-based dynamic DNS updater for Cloudflare. It automatical
 2. Set up the required environment variables as mentioned in the previous instructions.
 3. Run the Docker container using the following command:
 ```docker run -d --name cloudflare-dns-updater -e TOKEN=<your_api_token> -e DOMAIN=<your_domain> -e RECORD_NAME=<your_dns_record_name> yapzanan/cloudflarednschange:first```
+
+### Portainer Installation
+If you prefer to use Portainer to manage your Docker containers, you can follow these additional steps:c
+1. Install and set up Portainer according to the official documentation: [Portainer Documentation](https://documentation.portainer.io/)
+2. Access the Portainer web interface.
+3. Create a new Stack or Deployment in Portainer.
+4. Provide the following details:
+- Stack Name: Choose a name for your stack.
+- Repository URL: Enter the URL of your GitHub repository or the path to your local repository.
+- Compose file / Stack File: Specify the path to your `docker-compose.yml` file or use the inline editor to define the stack.
+5. Click on the "Deploy the stack" button to deploy the container using Portainer.
+
 
 
 **Note:** Ensure that the Cloudflare API token you provide has the necessary permissions to access and modify DNS records for the specified domain.
